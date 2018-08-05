@@ -1,6 +1,5 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import java.util.ArrayList;
 import java.util.Stack;
 
 /**

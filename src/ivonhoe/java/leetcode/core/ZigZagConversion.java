@@ -1,4 +1,4 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
 /**
  * Created by ivonhoe on 14-10-22.

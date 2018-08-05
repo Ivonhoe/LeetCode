@@ -1,4 +1,4 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
 import java.util.HashMap;
 

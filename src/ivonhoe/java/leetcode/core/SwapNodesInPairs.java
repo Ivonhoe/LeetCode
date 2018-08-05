@@ -1,4 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
+
+import ivonhoe.java.leetcode.bean.ListNode;
 
 /**
  * Created by ivonhoe on 14-10-20.
@@ -23,16 +25,6 @@ public class SwapNodesInPairs {
         }
 
         return head;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package data;
+package ivonhoe.java.leetcode.bean;
 
 /**
  * Created by ivonhoe on 14-10-29.

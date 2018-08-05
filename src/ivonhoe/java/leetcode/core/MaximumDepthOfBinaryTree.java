@@ -1,6 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import data.TreeNode;
+import ivonhoe.java.leetcode.bean.TreeNode;
 
 /**
  * Created by ivonhoe on 14-12-3.

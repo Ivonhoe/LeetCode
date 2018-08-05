@@ -1,4 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
+
+import ivonhoe.java.leetcode.bean.ListNode;
 
 /**
  * Created by ivonhoe on 14-10-23.
@@ -19,17 +21,6 @@ public class LinkedListCycle {
 
         }
         return false;
-    }
-
-    // Definition for singly-linked list.
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 
     public static void main(String[] args) {

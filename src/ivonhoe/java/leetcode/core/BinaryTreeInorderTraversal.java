@@ -1,6 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import data.TreeNode;
+import ivonhoe.java.leetcode.bean.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +22,13 @@ public class BinaryTreeInorderTraversal {
         //Stack
 //        Stack stack = new Stack();
 //
-//        data.TreeNode p = root;
+//        bean.TreeNode p = root;
 //        while (p != null || !stack.isEmpty()) {
 //            if (p != null) {
 //                stack.push(p);
 //                p = p.left;
 //            } else {
-//                p = (data.TreeNode) stack.pop();
+//                p = (bean.TreeNode) stack.pop();
 //                inorder.add(p.val);
 //                p = p.right;
 //            }

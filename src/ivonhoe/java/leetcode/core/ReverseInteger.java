@@ -1,6 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import data.L;
+import ivonhoe.java.leetcode.utils.L;
 
 /**
  * Created by ivonhoe on 14-12-2.

@@ -1,4 +1,4 @@
-package data;
+package ivonhoe.java.leetcode.utils;
 
 import java.util.List;
 

@@ -1,8 +1,7 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import data.ListNode;
+import ivonhoe.java.leetcode.bean.ListNode;
 
-import java.util.List;
 import java.util.Stack;
 
 /**

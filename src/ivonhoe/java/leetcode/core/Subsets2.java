@@ -1,6 +1,6 @@
-package core;
+package ivonhoe.java.leetcode.core;
 
-import data.L;
+import ivonhoe.java.leetcode.utils.L;
 
 import java.util.ArrayList;
 import java.util.Arrays;
