@@ -58,10 +58,7 @@ var levelOrder = function (root) {
     var result = []
     var queue = []
     queue.push(root)
-    while (true) {
-        if (queue.length == 0) {
-            return result
-        }
+    while (queue.length) {
         var list = []
         var length = queue.length;
         for (i = 0; i < length; i++) {
@@ -76,6 +73,8 @@ var levelOrder = function (root) {
         }
         result.push(list)
     }
+
+    return result
 };
 // @lc code=end
 
