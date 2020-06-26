@@ -46,30 +46,22 @@ var addTwoNumbers = function (l1, l2) {
 };
 
 var solution1 = function (l1, l2) {
-    var value1 = getNumber(l1)
-    var value2 = getNumber(l2)
-    var value = value1 + value2;
+    let node = new ListNode('head');
+    let temp = node;//哑结点
+    let add = 0;//是否进一
+    let sum = 0;//新链表当前未取余的值 = 链表1值 + 链表2值 + add;
 
-    var array = []
-    while (value > 0) {
-        array.push(value % 10)
-        value = parseInt(value / 10)
+    //遍历，直到最长的都为空
+    while (l1 || l2) {
+        sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + add;
+        temp.next = new ListNode(sum % 10);//取余则为新链表的值
+        temp = temp.next;
+        add = sum >= 10 ? 1 : 0;
+        l1 && (l1 = l1.next);
+        l2 && (l2 = l2.next);
     }
-}
-
-var getNumber = function (l1) {
-    var stack1 = [];
-    var value1 = 0;
-    do {
-        stack1.push(l1.val)
-        l1 = l1.next
-    } while (l1 != null)
-
-    while (stack1.length > 0) {
-        value1 = stack1.pop() + value1 * 10;
-    }
-
-    return value1;
+    add && (temp.next = new ListNode(add));
+    return node.next;
 }
 // @lc code=end
 
