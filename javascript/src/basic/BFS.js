@@ -11,25 +11,23 @@ function bfs (root) {
     var result = []
     var queue = []
     queue.push(root)
-    while (true) {
-        if (queue.length == 0) {
-            return result
-        }
+    while (queue.length) {
         var list = []
         var length = queue.length;
         for (i = 0; i < length; i++) {
             var node = queue.shift()
-            console.log(node.val)
             list.push(node.val)
-            if (node.left != null) {
+            if (node.left) {
                 queue.push(node.left)
             }
-            if (node.right != null) {
+            if (node.right) {
                 queue.push(node.right)
             }
         }
         result.push(list)
     }
+
+    return result
 }
 
 function testBfs () {
