@@ -3,6 +3,9 @@
  * 将一个数组分成两个数组，直到数组中只有一个元素。
  * 递归利用合并来排序。
  * 
+ * 递推公式：merge_sort(p…r) = merge(merge_sort(p…q), merge_sort(q+1…r))
+ * 终止条件：p >= r 不用再继续分解
+ * 
  * 非原地，稳定排序算法
  * @param {number} array 
  */
