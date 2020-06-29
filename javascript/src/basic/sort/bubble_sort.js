@@ -1,3 +1,10 @@
+/**
+ * 比较交换相邻的两个值，每次循环将当前未排序数组中最大的数冒泡到数组后面
+ * 
+ * 原地排序，稳定的
+ * O(n) ~ O(n^2)
+ * @param {} array 
+ */
 function bubbleSort (array) {
     if (array == null || !array.length) {
         return
