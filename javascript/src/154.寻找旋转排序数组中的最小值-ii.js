@@ -46,6 +46,16 @@
  * @return {number}
  */
 var findMin = function (nums) {
+    return solution2(nums)
+};
+
+// 二分查找
+function solution2 (nums) {
+
+}
+
+// 双指针
+function solution1 (nums) {
     if (!nums.length) {
         return
     }
@@ -63,6 +73,6 @@ var findMin = function (nums) {
             return Math.min(nums[p], nums[0])
         }
     }
-};
+}
 // @lc code=end
 
