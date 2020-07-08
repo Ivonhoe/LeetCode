@@ -51,7 +51,19 @@ var findMin = function (nums) {
 
 // 二分查找
 function solution2 (nums) {
+    var i = 0, j = nums.length - 1
+    while (i < j) {
+        const m = i + ((j - i) >>> 1);
+        if (nums[m] > nums[j]) {
+            i = m + 1
+        } else if (nums[m] < nums[j]) {
+            j = m
+        } else {
+            j = j - 1
+        }
+    }
 
+    return nums[i]
 }
 
 // 双指针
