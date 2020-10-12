@@ -45,13 +45,40 @@
  * @return {number}
  */
 var climbStairs = function (n) {
+    return solution2(n)
+};
+// @lc code=end
+
+var solution0 = function (n) {
     var data = []
-    data[0] = 1, data[1] = 1
+    data[0] = 1
+    data[1] = 1
     for (var i = 2; i <= n; i++) {
         data[i] = data[i - 1] + data[i - 2]
     }
 
     return data[n]
-};
-// @lc code=end
+}
 
+/// 递归超时
+var solution1 = function (n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+
+    return solution1(n - 1) + solution1(n - 2)
+}
+
+var solution2 = function (n) {
+    var p = 0
+    var q = 0
+    var r = 1
+
+    for (var i = 1; i <= n; i++) {
+        p = q;
+        q = r;
+        r = p + q;
+    }
+
+    return r
+}
