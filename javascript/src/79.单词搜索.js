@@ -84,7 +84,8 @@ var dfs = function (board, word, i, j, k) {
 
     var temp = board[i][j]
     board[i][j] = '/'
-    var result = dfs(board, word, i + 1, j, k + 1) || dfs(board, word, i - 1, j, k + 1) || dfs(board, word, i, j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1)
+    var result = dfs(board, word, i + 1, j, k + 1) || dfs(board, word, i - 1, j, k + 1) ||
+        dfs(board, word, i, j + 1, k + 1) || dfs(board, word, i, j - 1, k + 1)
     board[i][j] = temp
     return result
 }
