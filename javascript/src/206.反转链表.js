@@ -47,7 +47,8 @@ var reverseList = function (head) {
 
 var result = null
 var p = null
-function solution1 (head) {
+
+function solution1(head) {
     if (!head) {
         return null
     }
@@ -63,16 +64,16 @@ function solution1 (head) {
     }
 }
 
-function solution2 (head) {
-    var cur, pre = head;
-    while (pre) {
-        var t = pre.next;
-        pre.next = cur;
-        cur = pre;
-        pre = t;
+function solution2(head) {
+    var pre = null,
+        current = head;
+    while (current) {
+        var t = current.next;
+        current.next = pre;
+        pre = current;
+        current = t;
     }
 
-    return cur
+    return pre
 }
 // @lc code=end
-
