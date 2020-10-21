@@ -64,6 +64,25 @@
  * @return {ListNode}
  **/
 var swapPairs = function (head) {
+    return solution2(head)
+};
+
+// 递归解法
+var solution2 = function (head) {
+    if (head == null || head.next == null) {
+        return head
+    }
+
+    var next = head.next
+    // 使head指向后面交换后的结点
+    head.next = solution2(next.next)
+    // 第二个结点指向head
+    next.next = head
+    // 返回新的头结点
+    return next
+}
+
+var solution1 = function (head) {
     var h = new ListNode(0)
     h.next = head
     var temp = h
@@ -80,5 +99,5 @@ var swapPairs = function (head) {
     }
 
     return h.next
-};
+}
 // @lc code=end
