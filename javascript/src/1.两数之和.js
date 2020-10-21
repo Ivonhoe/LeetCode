@@ -34,9 +34,10 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    return solotion1(nums, target)
+    return solution2(nums, target);
 };
 
+// O(N^2)的时间复杂度
 var solotion1 = function (nums, target) {
     var result = new Array;
     var length = nums.length;
@@ -53,8 +54,32 @@ var solotion1 = function (nums, target) {
     return result;
 }
 
+// O(N), 空间换时间
 var solution2 = function (nums, target) {
+    var mapCache = new Map()
+    for (let i = 0; i < nums.length; i++) {
+        if (mapCache.get(target - nums[i]) != null) {
+            return [mapCache.get(target - nums[i]), i]
+        }
+        mapCache.set(nums[i], i)
+    }
 
+    return []
+}
+
+var solution3 = function (nums, target, i, map = {}) {
+    const mapCache = map
+    console.log("map cache:" + mapCache.length)
+    if (mapCache[target - nums[i]] != null) {
+        return [mapCache[target - nums[i]], i]
+    } else {
+        mapCache[nums[i]] = i
+        i++
+        if (i < nums.length) {
+            return solution3(nums, target, i, mapCache)
+        } else {
+            return []
+        }
+    }
 }
 // @lc code=end
-
