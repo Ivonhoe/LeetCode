@@ -58,8 +58,8 @@ var intersect = function (nums1, nums2) {
 };
 
 var solution2 = function (nums1, nums2) {
-    nums1.sort();
-    nums2.sort();
+    nums1.sort(sortNumber);
+    nums2.sort(sortNumber);
     var i = 0;
     var j = 0;
     var result = [];
@@ -75,6 +75,10 @@ var solution2 = function (nums1, nums2) {
         }
     }
     return result
+}
+
+function sortNumber(a, b) {
+    return a - b
 }
 
 // 枚举法
