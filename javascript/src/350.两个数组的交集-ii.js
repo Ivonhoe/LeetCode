@@ -54,9 +54,35 @@
  * @return {number[]}
  */
 var intersect = function (nums1, nums2) {
-    return solution2(nums1, nums2)
+    return solution3(nums1, nums2)
 };
 
+// map计数
+var solution3 = function (nums1, nums2) {
+    var map = new Map()
+    for (let i = 0; i < nums1.length; i++) {
+        var value = map.get(nums1[i]);
+        if (value != undefined) {
+            value += 1;
+        } else {
+            value = 1
+        }
+        map.set(nums1[i], value)
+    }
+
+    var result = [];
+    for (let i = 0; i < nums2.length; i++) {
+        var value = map.get(nums2[i]);
+        if (value > 0) {
+            map.set(nums2[i], --value)
+            result.push(nums2[i])
+        }
+    }
+
+    return result;
+}
+
+// 排序，双指针
 var solution2 = function (nums1, nums2) {
     nums1.sort(sortNumber);
     nums2.sort(sortNumber);
