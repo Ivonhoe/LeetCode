@@ -14,7 +14,7 @@ function bfs (root) {
     while (queue.length) {
         var list = []
         var length = queue.length;
-        for (i = 0; i < length; i++) {
+        for (let i = 0; i < length; i++) {
             var node = queue.shift()
             list.push(node.val)
             if (node.left) {
