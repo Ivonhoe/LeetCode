@@ -65,7 +65,6 @@ var solution2 = function (root) {
         // 获取最左边左子树
         root = stack.pop()
         ans.push(root.val)
-        // 遍历右子树的左子树
         root = root.right
     }
 
