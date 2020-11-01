@@ -47,6 +47,7 @@ var inorderTraversal = function (root) {
     return solution2(root)
 };
 
+// 迭代法
 var solution2 = function (root) {
     if (root == null) {
         return []
