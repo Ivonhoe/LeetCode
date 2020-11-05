@@ -33,12 +33,8 @@
  * @return {number}
  */
 var addDigits = function (num) {
-    return solution3(num)
+    return solution2(num)
 };
-
-var solution3 = function (num) {
-    return (num - 1) % 9 + 1
-}
 
 // 递归
 var solution2 = function (num) {
@@ -52,6 +48,10 @@ var solution2 = function (num) {
         num = Math.trunc(num / 10)
     }
     return solution2(sum)
+}
+
+var solution3 = function (num) {
+    return (num - 1) % 9 + 1
 }
 
 // 迭代法
