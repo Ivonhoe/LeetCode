@@ -63,8 +63,37 @@
  * @param {TreeNode} q
  * @return {TreeNode}
  */
-var lowestCommonAncestor = function(root, p, q) {
-    
+var lowestCommonAncestor = function (root, p, q) {
+    var parentMap = new Map()
+    var dfs = function (r) {
+        if (r.left != null) {
+            // child和parent的映射关系
+            parentMap.set(r.left.val, r)
+            dfs(r.left)
+        }
+
+        if (r.right != null) {
+            // child和parent的映射关系
+            parentMap.set(r.right.val, r)
+            dfs(r.right)
+        }
+    }
+
+    dfs(root)
+    var visited = []
+    while (p != null) {
+        visited.push(p)
+        // 找到parent，向上循环
+        p = parentMap.get(p.val)
+    }
+
+    while (q != null) {
+        if (visited.indexOf(q) > -1) {
+            return q;
+        }
+        q = parentMap.get(q.val)
+    }
+
+    return null
 };
 // @lc code=end
-
