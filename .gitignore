@@ -6,3 +6,6 @@
 /.vscode/
 /.history/
 /c++/cmake-build-debug
+/c++/.idea
+/c++/src/leetcode/editor/cn/all.json
+/c++/src/leetcode/editor/cn/translation.json
