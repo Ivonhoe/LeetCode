@@ -7,3 +7,4 @@ add_executable(main main.cpp src/leetcode/bean/TreeNode.cpp src/leetcode/bean/Tr
 add_executable(235-LowestCommonAncestorOfABinarySearchTree src/leetcode/editor/cn/235-LowestCommonAncestorOfABinarySearchTree.cpp)
 add_executable(46-Permutations src/leetcode/editor/cn/46-Permutations.cpp)
 add_executable(70-ClimbingStairs src/leetcode/editor/cn/70-ClimbingStairs.cpp)
+add_executable(122-BestTimeToBuyAndSellStockIi src/leetcode/editor/cn/122-BestTimeToBuyAndSellStockIi.cpp)
