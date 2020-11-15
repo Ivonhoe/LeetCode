@@ -50,15 +50,12 @@
  * @return {number}
  */
 var numIslands = function (grid) {
-
     var dfs = function (grid, i, j) {
         if (grid.length == 0 || grid[0].length == 0) {
             return
         }
 
-        var m = grid.length;
-        var n = grid[0].length;
-        if (i < 0 || j < 0 || i >= m || j >= n) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length) {
             return
         }
         if (grid[i][j] == '0') {
@@ -91,4 +88,3 @@ var numIslands = function (grid) {
     return result;
 };
 // @lc code=end
-
