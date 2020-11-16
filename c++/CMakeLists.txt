@@ -8,3 +8,5 @@ add_executable(235-LowestCommonAncestorOfABinarySearchTree src/leetcode/editor/c
 add_executable(46-Permutations src/leetcode/editor/cn/46-Permutations.cpp)
 add_executable(70-ClimbingStairs src/leetcode/editor/cn/70-ClimbingStairs.cpp)
 add_executable(122-BestTimeToBuyAndSellStockIi src/leetcode/editor/cn/122-BestTimeToBuyAndSellStockIi.cpp)
+add_executable(455-AssignCookies src/leetcode/editor/cn/455-AssignCookies.cpp)
+add_executable(127-WordLadder src/leetcode/editor/cn/127-WordLadder.cpp)

@@ -29,11 +29,11 @@
 class Solution {
 public:
     int climbStairs(int n) {
-        int p = 0, q = 0, ans = 1;
-        for (int i = 1; i <= n; i++) {
+        int p = 1, q = 1, ans = 1;
+        for (int i = 2; i <= n; i++) {
+            ans = p + q;
             p = q;
             q = ans;
-            ans = p + q;
         }
         return ans;
     }

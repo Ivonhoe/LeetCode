@@ -49,7 +49,36 @@
 class Solution {
 public:
     TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
-
+        return solution2(root, p, q);
     }
+
+    // 递归
+    TreeNode *solution1(TreeNode *root, TreeNode *p, TreeNode *q) {
+        if (root == nullptr)return nullptr;
+        // p,q都大于当前节点，说明公共祖先节点在当前节点的右子树上
+        if (p->val > root->val && q->val > root->val) {
+            return solution1(root->right, p, q);
+        } else if (p->val < root->val && q->val < root->val) {
+            // p，q都小于当前节点，说明公共祖先在左子树上
+            return solution1(root->left, p, q);
+        } else {
+            // 说明当前是公共祖先节点
+            return root;
+        }
+    }
+
+    TreeNode *solution2(TreeNode *root, TreeNode *p, TreeNode *q) {
+        TreeNode *current = root;
+        while (true) {
+            if (p->val > current->val && q->val > current->val) {
+                current = current->right;
+            } else if (p->val < current->val && q->val < current->val) {
+                current = current->left;
+            } else {
+                return current;
+            }
+        }
+    }
+
 };
 //leetcode submit region end(Prohibit modification and deletion)
