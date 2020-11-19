@@ -16,3 +16,6 @@ add_executable(81-SearchInRotatedSortedArrayIi src/leetcode/editor/cn/81-SearchI
 add_executable(33-SearchInRotatedSortedArray src/leetcode/editor/cn/33-SearchInRotatedSortedArray.cpp)
 add_executable(153-FindMinimumInRotatedSortedArray src/leetcode/editor/cn/153-FindMinimumInRotatedSortedArray.cpp)
 add_executable(874-WalkingRobotSimulation src/leetcode/editor/cn/874-WalkingRobotSimulation.cpp)
+add_executable(121-BestTimeToBuyAndSellStock src/leetcode/editor/cn/121-BestTimeToBuyAndSellStock.cpp)
+add_executable(53-MaximumSubarray src/leetcode/editor/cn/53-MaximumSubarray.cpp)
+add_executable(1143-LongestCommonSubsequence src/leetcode/editor/cn/1143-LongestCommonSubsequence.cpp)
