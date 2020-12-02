@@ -33,3 +33,4 @@ add_executable(589-NAryTreePreorderTraversal src/leetcode/editor/cn/589-NAryTree
 add_executable(91-DecodeWays src/leetcode/editor/cn/91-DecodeWays.cpp)
 add_executable(79-WordSearch src/leetcode/editor/cn/79-WordSearch.cpp)
 add_executable(212-WordSearchIi src/leetcode/editor/cn/212-WordSearchIi.cpp)
+add_executable(208-ImplementTriePrefixTree src/leetcode/editor/cn/208-ImplementTriePrefixTree.cpp)
