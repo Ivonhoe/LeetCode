@@ -29,6 +29,21 @@
 class Solution {
 public:
     int climbStairs(int n) {
+        return solution1(n);
+    }
+
+    int solution2(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+
+        return solution2(n - 1) + solution2(n - 2);
+    }
+
+    int solution1(int n) {
         int p = 1, q = 1, ans = 1;
         for (int i = 2; i <= n; i++) {
             ans = p + q;
