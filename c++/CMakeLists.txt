@@ -37,3 +37,4 @@ add_executable(208-ImplementTriePrefixTree src/leetcode/editor/cn/208-ImplementT
 add_executable(547-FriendCircles src/leetcode/editor/cn/547-FriendCircles.cpp)
 add_executable(367-ValidPerfectSquare src/leetcode/editor/cn/367-ValidPerfectSquare.cpp)
 add_executable(190-ReverseBits src/leetcode/editor/cn/190-ReverseBits.cpp)
+add_executable(1122-RelativeSortArray src/leetcode/editor/cn/1122-RelativeSortArray.cpp)
