@@ -38,24 +38,32 @@
  * @return {number}
  */
 var firstUniqChar = function (s) {
-    return solution1(s)
+    return solution2(s)
 };
 
 var solution2 = function (s) {
-
+    let countingSort = (arr, maxValue) => {
+        let bucket = new Array(maxValue).fill(0);
+        let arrLen = arr.length;
+        for (let i = 0; i < arrLen; i++) {
+            bucket[arr[i].charCodeAt() - 97]++;
+        }
+        for (let j = 0; j < arrLen; j++) {
+            if (bucket[arr[j].charCodeAt() - 97] == 1) {
+                return j;
+            }
+        }
+        return -1;
+    }
+    return countingSort(s, 26)
 }
 
 var solution1 = function (s) {
     var map = new Map()
 
     for (let i in s) {
-        var a = map[s.charAt(i)]
-        if (a != null) {
-            a++;
-        } else {
-            a = 1
-        }
-        map[s.charAt(i)] = a;
+        let count = map.get(s[i]) || 0;
+        map.set(s[i], count + 1);
     }
 
     for (let i = 0; i < s.length; i++) {
