@@ -68,10 +68,14 @@ import kotlin.collections.ArrayList
  * }
  */
 class Solution {
+    /**
+     * 中序遍历使用递归或dfs
+     */
     fun inorderTraversal(root: TreeNode?): List<Int> {
         return solution2(root)
     }
 
+    // dfs遍历
     fun solution2(root: TreeNode?): List<Int> {
         var result = ArrayList<Int>()
         var stack = LinkedList<TreeNode>()

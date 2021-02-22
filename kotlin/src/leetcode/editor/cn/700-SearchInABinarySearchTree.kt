@@ -41,6 +41,7 @@ import leetcode.editor.bean.TreeNode
  * }
  */
 class Solution {
+    // https://leetcode-cn.com/problems/same-tree/solution/xie-shu-suan-fa-de-tao-lu-kuang-jia-by-wei-lai-bu-/
     fun searchBST(root: TreeNode?, `val`: Int): TreeNode? {
         if (root == null) {
             return null
