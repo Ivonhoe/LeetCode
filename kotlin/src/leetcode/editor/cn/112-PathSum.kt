@@ -54,7 +54,23 @@ import leetcode.editor.bean.TreeNode
  */
 class Solution {
     fun hasPathSum(root: TreeNode?, targetSum: Int): Boolean {
+        return dfs(root, targetSum, 0)
+    }
 
+    fun dfs(root: TreeNode?, targetSum: Int, sum: Int): Boolean {
+        if (root == null) {
+            return false
+        }
+
+        var current = root.`val` + sum
+        if (targetSum == current && root.left == null && root.right == null) {
+            return true
+        }
+
+        if (dfs(root.left, targetSum, current) || dfs(root.right, targetSum, current)) {
+            return true
+        }
+        return false
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
