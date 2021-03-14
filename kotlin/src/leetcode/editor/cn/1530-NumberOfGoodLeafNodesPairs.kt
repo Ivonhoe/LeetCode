@@ -72,16 +72,50 @@ import leetcode.editor.bean.TreeNode
  * }
  */
 class Solution {
+    var ans: Int = 0
     fun countPairs(root: TreeNode?, distance: Int): Int {
-
+        dfs(root, distance)
+        return ans
     }
 
-    fun dfs(root: TreeNode?, distance: Int) {
+    fun dfs(root: TreeNode?, distance: Int): MutableList<Int> {
+        // 返回所有叶子节点到当前结点的距离
+        var result = mutableListOf<Int>()
         if (root == null) {
-            return
+            return result
+        }
+        // 叶子节点
+        if (root.left == null && root.right == null) {
+            result.add(1)
+            return result
         }
 
-        if(root.left !=null)
+        var left = dfs(root.left, distance)
+        var right = dfs(root.right, distance)
+        // 每次向上回溯之前，判断有没有路径小于distance的，有的话+1
+        for (l in left) {
+            for (r in right) {
+                if (l + r <= distance) {
+                    ans++
+                }
+            }
+        }
+
+        // 父节点距离叶子节点的距离=当前节点距离叶子节点的距离+1,把结果回溯给父节点
+        for (l in left) {
+            if (l + 1 > distance) {
+                continue
+            }
+            result.add(l + 1)
+        }
+
+        for (r in right) {
+            if (r + 1 > distance) {
+                continue
+            }
+            result.add(r + 1)
+        }
+        return result
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
