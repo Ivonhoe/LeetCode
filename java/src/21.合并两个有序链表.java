@@ -75,6 +75,34 @@ class Solution {
             return l2;
         }
     }
+
+    public ListNode mergeTwoListsSolution2(ListNode l1, ListNode l2){
+        ListNode p = l1;
+        ListNode q = l2;
+        ListNode temp = new ListNode();
+        ListNode ans = temp;
+        while(p!=null && q!=null){
+            if(p.val<q.val){
+                temp.next = p;
+                p = p.next;
+            }else{
+                temp.next = q;
+                q = q.next;
+            }
+            temp = temp.next;
+        }
+        while(p!=null){
+            temp.next = p;
+            p = p.next;
+            temp= temp.next;
+        }
+        while(q!=null){
+            temp.next = q;
+            q = q.next;
+            temp = temp.next;
+        }
+        return ans.next;
+    }
 }
 // @lc code=end
 
