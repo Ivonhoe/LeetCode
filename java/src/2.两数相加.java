@@ -67,8 +67,62 @@
  * }
  */
 class Solution {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int length1 = getLength(l1);
+        int length2 = getLength(l2);
+        
+        ListNode p = l1,q = l2;
+        // 短的后面补零
+        if(length1>length2){
+           addZero(l2, length1-length2);
+        }else if(length1<length2){
+           addZero(l1, length2-length1);
+        }
+        ListNode ans = new ListNode();
+        ListNode k = ans;
+        int plus = 0;
+        while(p!=null&&q!=null){
+            int number = plus+p.val+q.val;
+            if(number>=10){
+                number = number%10;
+                plus = 1;
+            }else{
+                plus = 0;
+            }
+            p = p.next;
+            q = q.next;
 
+            ListNode node = new ListNode(number);
+            k.next = node;
+            k = k.next;
+        }
+        // 检查最后的进位
+        if(plus>0){
+            k.next = new ListNode(1);
+        }
+        return ans.next;
+    }
+
+    private ListNode addZero(ListNode node, int count){
+        ListNode ans = node;
+        while(node.next!=null){
+            node= node.next;
+        }
+        while(count>0){
+            node.next = new ListNode(0);
+            node = node.next;
+            count--;
+        }
+        return ans;
+    }
+
+    private int getLength(ListNode node){
+        int ans = 0;
+        while(node!=null){
+            node = node.next;
+            ans++; 
+        }
+        return ans;
     }
 }
 // @lc code=end
