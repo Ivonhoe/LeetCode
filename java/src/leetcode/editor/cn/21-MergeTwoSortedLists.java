@@ -1,3 +1,5 @@
+package leetcode.editor.cn;
+
 import ivonhoe.java.leetcode.bean.ListNode;
 
 /*
