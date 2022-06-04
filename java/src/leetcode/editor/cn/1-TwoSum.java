@@ -1,3 +1,8 @@
+package leetcode.editor.cn;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /*
  * @lc app=leetcode.cn id=1 lang=java
  *
@@ -63,14 +68,14 @@ class Solution {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> temp = new HashMap();
         int[] ans = new int[2];
-        for(int i=0;i<nums.length;i++){
+        for (int i = 0; i < nums.length; i++) {
             Integer other = temp.get(target - nums[i]);
-            if(other!=null){
+            if (other != null) {
                 ans[0] = i;
                 ans[1] = other;
                 return ans;
-            }else {
-                temp.put(nums[i],i);
+            } else {
+                temp.put(nums[i], i);
             }
         }
 
@@ -78,4 +83,3 @@ class Solution {
     }
 }
 // @lc code=end
-
