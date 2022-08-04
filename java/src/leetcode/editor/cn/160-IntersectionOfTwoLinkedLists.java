@@ -1,5 +1,8 @@
 package leetcode.editor.cn;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import ivonhoe.java.leetcode.bean.ListNode;
 
 /*
@@ -116,6 +119,10 @@ import ivonhoe.java.leetcode.bean.ListNode;
 public class Solution {
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        return solution2(headA, headB);
+    }
+
+    public ListNode solution1(ListNode headA, ListNode headB) {
         ListNode p = headA;
         ListNode q = headB;
 
@@ -129,7 +136,25 @@ public class Solution {
         }
 
         return null;
+    }
 
+    public ListNode solution2(ListNode headA, ListNode headB) {
+        Set<ListNode> visited = new HashSet<ListNode>();
+        ListNode temp = headA;
+        while (temp != null) {
+            visited.add(temp);
+            temp = temp.next;
+        }
+
+        temp = headB;
+        while (temp != null) {
+            if (visited.contains(temp)) {
+                return temp;
+            }
+            temp = temp.next;
+        }
+
+        return null;
     }
 }
 // @lc code=end
