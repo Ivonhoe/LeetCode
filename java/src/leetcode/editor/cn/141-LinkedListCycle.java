@@ -1,5 +1,8 @@
 package leetcode.editor.cn;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import ivonhoe.java.leetcode.bean.ListNode;
 
 /*
@@ -76,6 +79,10 @@ import ivonhoe.java.leetcode.bean.ListNode;
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
+        return solution2(head);
+    }
+
+    private boolean solution1(ListNode head) {
         if (head == null) {
             return false;
         }
@@ -91,6 +98,20 @@ public class Solution {
             } else {
                 return false;
             }
+        }
+
+        return false;
+    }
+
+    private boolean solution2(ListNode node) {
+        ListNode temp = node;
+        Set<ListNode> visited = new HashSet<ListNode>();
+        while(temp!=null){
+            if(visited.contains(temp)){
+                return true;
+            }
+            visited.add(temp);
+            temp = temp.next;
         }
 
         return false;
