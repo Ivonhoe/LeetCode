@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 class Solution {
     public char firstUniqChar(String s) {
         HashMap<Character, Boolean> dic = new HashMap<>();
