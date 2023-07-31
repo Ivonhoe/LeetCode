@@ -95,5 +95,27 @@ class Solution {
 
         return ans;
     }
+
+    private List<List<Integer>> ans = new ArrayList<List<Integer>>();
+
+    // 递归实现层序遍历
+    private List<List<Integer>> solution2(TreeNode node) {
+        dfs(node, 0);
+        return ans;
+    }
+
+    private void dfs(TreeNode node, int level) {
+        if (node == null) {
+            return;
+        }
+        if (level >= ans.size()) {
+            ans.add(new ArrayList<Integer>());
+        }
+
+        ans.get(level).add(node.val);
+        dfs(node.left, level + 1);
+        dfs(node.right, level + 1);
+    }
+
 }
 // @lc code=end
