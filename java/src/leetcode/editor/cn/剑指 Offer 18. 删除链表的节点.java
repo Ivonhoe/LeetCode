@@ -1,3 +1,5 @@
+import ivonhoe.java.leetcode.bean.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
