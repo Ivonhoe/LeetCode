@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const shell = require("shelljs");
+const process = require("child_process");
 
 var jsFile = {
   source: "/Users/Ivonhoe/Workspace/LeetCode/javascript/src",
@@ -49,9 +49,17 @@ for (index in sourceFilePaths) {
         var destPath = path.join(destDir, destFileName);
 
         if (!fs.existsSync(destPath)) {
-          shell.cp("-r", sourcePath, destPath);
+          var command = `mv ${filePath} ${destPath}`;
+          process.exec(command, (error, stdout, stderr) => {
+            if (!error) {
+              // 成功
+            } else {
+              // 失败
+              console.log("----error:"+error)
+            }
+          });
         }
-        console.log("dest file path:" + destPath);
+        console.log("source:" + filePath + ",dest:" + destPath);
       }
     }
   });
