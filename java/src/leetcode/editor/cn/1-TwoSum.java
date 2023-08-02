@@ -1,5 +1,3 @@
-package leetcode.editor.cn;
-
 import java.util.HashMap;
 import java.util.Map;
 
