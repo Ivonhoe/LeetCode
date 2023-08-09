@@ -58,52 +58,54 @@
  */
 
 // @lc code=start
+
+import ivonhoe.java.leetcode.bean.TreeNode;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode(int x) { val = x; }
  * }
  */
 class Solution {
-    
+
     TreeNode ans;
-    
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         dfs(root, p, q);
         return ans;
     }
-    
-    private int dfs(TreeNode root, TreeNode p, TreeNode q){
-        if(root == null){
+
+    private int dfs(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
             return 0;
         }
-        
+
         int leftContain = dfs(root.left, p, q);
-        if(ans != null){
+        if (ans != null) {
             return 2;
         }
-        
+
         int rightContain = dfs(root.right, p, q);
-        if(ans != null){
+        if (ans != null) {
             return 2;
         }
-        
+
         int rootContain = 0;
-        if(root == p || root == q){
-            rootContain=1;
+        if (root == p || root == q) {
+            rootContain = 1;
         }
-        if(rootContain==0 && leftContain==1 && rightContain==1){
+        if (rootContain == 0 && leftContain == 1 && rightContain == 1) {
             ans = root;
         }
-        if(rootContain==1 && (leftContain==1 || rightContain==1)){
+        if (rootContain == 1 && (leftContain == 1 || rightContain == 1)) {
             ans = root;
         }
-        
+
         return leftContain + rightContain + rootContain;
     }
 }
 // @lc code=end
-
